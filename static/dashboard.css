@@ -252,6 +252,20 @@ div.content {
         height: 600px;
         width: 300px;
     }
+    .homeMain {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    
+    }
+
+    .box{
+        width:250px;
+        }
+    .holder{
+        margin-left: 5vw;
+        }
+
 
     .title {
         font-size: 15px;
