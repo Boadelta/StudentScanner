@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+     
+    <title>Admin Login
+    </title>
+    <link rel = "stylesheet" href = "{{url_for('static', filename = 'login.css')}}">
+    
+</head>
+
+<body>
+    <section class ="bar">
+        <nav>
+            <a href = "{{url_for('index')}}">HOME</a>
+        </nav>
+    </section>
+        <h1 class = "heading header"> ADMIN LOGIN</h1>
+        <h3 class = "title header"> Enter username and password</h3>
+        
+    
+    <!--container -->
+    <div class = "container">
+        <!-- upper button section to select add or delete             user-->
+
+        <!-- Form section that contains the login and the 
+        signup form -->
+        <form action = "{{url_for('checkLogin') }}" method = 'post'>
+            <div class = "form-section">
+                <!--Delete user -->
+                <div class = "login-box">
+                    <input type = "username"
+                        class = "username ele"
+                        placeholder = "username"
+                        name = "username">
+                    <input type = "password"
+                        class = "password ele"
+                        placeholder = "password"
+                        name = "password">
+                    <button class = "clkbtn" type = "submit">Login</button>
+                    <div> {{ msg }}</div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+    
+</body>
+</html>

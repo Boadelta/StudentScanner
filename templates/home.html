@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+     
+    <title>PTI Student Scanner
+    </title>
+    
+</head>
+<body>
+    <section class ="homeSection">
+        <h1 style = "color:#0C6346;font-size:30px;">Dashboard</h1>
+        <div class = "homeMain">
+        <div class = "box" >
+            <h2>Registered Students</h2>
+            <h2 style = "font-size: 38px">{{ all_students|length }}</h2>
+        </div>
+        <div class = "box">
+            <h2>Staff Users</h2>
+            <h2 style = "font-size: 38px">{{ all_users|length }}</h2>
+        </div> 
+    </div>
+    </section>
+    <section class = "infoSection">
+        <h2 style = "color:#0C6346;font-size:25px"> STAFF USER INFORMATION</h2>
+        <table id = "myTable">
+            <thead>
+                <tr>
+                    <th>USERNAME</th>
+                    <th>PASSWORD</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in all_users %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.password}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    
+    
+</body>
+</html>

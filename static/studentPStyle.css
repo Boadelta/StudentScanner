@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f3feee, #f9fbf6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  padding: 20px;
+}
+
+.card {
+  background-color: #ffffffdd;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  max-width: 700px;
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+  align-items: center;
+}
+
+.photo-section {
+  flex: 1;
+}
+
+.student-photo {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #0077b6;
+}
+
+.details-section {
+  flex: 2;
+}
+
+.name {
+  margin-top: 0;
+  font-size: 24px;
+  color: #023e8a;
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .photo-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .student-photo {
+    width: 150px;
+    height: 180px;
+  }
+
+  .details-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+    align-items: flex-start;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .details-section p {
+    font-size: 14px;
+  }
+}
+
+.details-section p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+

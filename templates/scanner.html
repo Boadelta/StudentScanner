@@ -1,0 +1,35 @@
+<!-- Index.html file -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="{{ url_for('static', filename='scanner.css') }}">
+    <title>PTI Student Scanner
+    </title>
+    
+</head>
+
+<body>
+    <section class ="bar">
+        <nav>
+            <a href = "{{url_for('index')}}">HOME</a>
+        </nav>
+    </section>
+    <div class = "body">
+        <div class="container">
+            <h1>Student QR Code Scanner</h1>
+            <div class="section">
+                <div id="my-qr-reader">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

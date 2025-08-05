@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+     <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %} - StudentInfo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='studentPStyle.css') }}">
+
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="photo-section">
+        <img src="{{got_student.StudImage}}" alt="Student Photo" class="student-photo"/>
+      </div>
+      <div class="details-section">
+        <h2 class="name"> {{got_student.SurName}} {{got_student.FirstName}} </h2>
+        <p><strong>Mat Number:</strong> {{got_student.MatNumber}} </p>
+        <p><strong>Department:</strong> {{got_student.Department}} </p>
+        <p><strong>Gender:</strong> {{got_student.Gender}} </p>
+        <p><strong>Email:</strong> {{got_student.Email}} </p>
+        <p><strong>Level:</strong> {{got_student.Level}} </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

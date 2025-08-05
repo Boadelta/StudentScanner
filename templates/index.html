@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="{{ url_for('static', filename='homeStyle.css') }}">
+     
+    <title>PTI Student Scanner
+    </title>
+    
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class = "topnav" id ="myTopnav">
+        <h3 class="Logo"> SVP</h3>
+        <div class= "myLink">
+            <a style="text-decoration:none" href="{{ url_for('index') }}">Home</a>
+            <a style="text-decoration:none" href="{{ url_for('aboutPage') }}">About</a>
+            <a style="text-decoration:none" href="{{ url_for('contactPage') }}">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars" id = "myIcon"> </i>
+            </a>
+        </div>
+        
+        
+    </div>
+    <div class = "mainBody" id = myMainBody>
+        <div class = "container grid">
+            <div class = "body-text">
+                <h1> Student Verification Portal</h1>
+                <h3> Verify student identity securely and instantly.</h3>
+            </div> 
+           
+            <div class = "idSample">
+                <img src = "/static/idCard.png" alt="Student id card">
+            </div>
+            <div class= "myBtn">
+                <button id ="myBtn1" onclick = document.location='{{ url_for('scanPage')}}'><i class = "fa fa-camera" aria-hidden = true> Scan QR Code</i></button>
+                <button id = "myBtn2" onclick = document.location='{{ url_for('adminLogin')}}'> <i class = "fa fa-lock" aria-hidden = true> Admin Login</i></button>
+                 <p class = "help-section"> Lost your QR code?<a href="{{url_for('regenerate')}}"> Regenerate here</a></p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+            if (document.getElementById("myIcon").className=="fa fa-bars"){
+                document.getElementById("myIcon").className = "fa fa-times";
+            }else{
+                document.getElementById("myIcon").className = "fa fa-bars";
+        }
+        }
+    </script>
+</body>
+</html>
+
+
+
+

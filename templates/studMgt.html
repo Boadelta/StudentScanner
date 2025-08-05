@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+     
+    <title>PTI Student Scanner
+    </title>
+    
+</head>
+
+<body>
+        <h1 class = "heading header"> Student Management</h1>
+        <h3 class = "title header"> Delete student</h3>
+    
+    <!--container -->
+    <div class = "container-stud">
+        <!-- upper button section to select add or delete             user-->
+
+        <!-- Form section that contains the login and the 
+        signup form -->
+        <form action = "{{ url_for('delStudent') }}" method ='post'>
+            <div class = "form-section-stud">
+                <!--Delete user -->
+                <div class = "delete-box">
+                    <input type = "matnumber"
+                        class = "matnumber ele"
+                        placeholder = "matnumber"
+                        name = "matnumber">
+                    <button class = "clkbtn" type = "submit">Delete</button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+    
+</body>
+</html>

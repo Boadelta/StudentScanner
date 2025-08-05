@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SVP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='homeStyle.css') }}">
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="topnav" id="myTopnav">
+        <h3 class="Logo">SVP</h3>
+        <div class="myLink">
+            <a style="text-decoration:none" href="{{ url_for('index') }}">Home</a>
+            <a style="text-decoration:none" href="{{ url_for('aboutPage') }}">About</a>
+            <a style="text-decoration:none" href="{{ url_for('contactPage') }}">Contact</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars" id="myIcon"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="mainBody" id="myMainBody">
+        <div class="container" id = "containerNew">
+            <h1 style = "text-align: left;">Contact Information</h1>
+            <p style="color: #fff; font-size: 18px; text-align: left;">
+                <strong>Email:</strong> support@ptisvp.edu.ng <br>
+                <strong>Phone:</strong> +234 801 234 5678 <br>
+                <strong>Address:</strong> Petroleum Training Institute, Effurun, Delta State, Nigeria
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+            if (document.getElementById("myIcon").className == "fa fa-bars") {
+                document.getElementById("myIcon").className = "fa fa-times";
+            } else {
+                document.getElementById("myIcon").className = "fa fa-bars";
+            }
+        }
+    </script>
+</body>
+</html>

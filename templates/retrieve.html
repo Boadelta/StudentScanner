@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+     
+    <title>Retrieve QR Code
+    </title>
+    <link rel = "stylesheet" href = "{{url_for('static', filename = 'retrieve.css')}}">
+    
+</head>
+
+<body>
+
+    <section class ="bar">
+        <nav>
+            <a href = "{{url_for('index')}}">HOME</a>
+        </nav>
+    </section>
+    <h1 class = "heading header"> QR CODE RETRIEVAL</h1>
+    <h3 class = "title header"> GET QR CODE</h3>
+    
+    <!--container -->
+    <div class = "container">
+        <!-- upper button section to select add or delete             user-->
+
+        <!-- Form section that contains the login and the 
+        signup form -->
+        <form action = "{{ url_for('sendQR')}}" method="post">
+            <div class = "form-section">
+                <!--Delete user -->
+                <div class = "delete-box">
+                    <input type = "matnumber"
+                        class = "matnumber ele"
+                        placeholder = "matnumber"
+                        name = "matnumber">
+                    <button class = "clkbtn" type= 'submit'>Download</button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+    
+</body>
+</html>

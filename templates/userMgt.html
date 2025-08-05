@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+     
+    <title>PTI Student Scanner
+    </title>
+    
+</head>
+
+<body>
+        
+            <h1 class = "heading header"> Staff User Management</h1>
+            <h3 class = "title header"> Add or Delete user</h3>
+        <!--container -->
+        <div class = "usercontainer">
+            <!-- upper button section to select add or delete user-->
+            <div class = "slider"></div>
+            <div class = "btn">
+                <button class = "delUser"> Delete</button>
+                <button class = "addUser"> Add</button>
+            </div>
+
+            
+            <div class = "form-section">
+                <!--Delete user -->
+                <form action = "{{ url_for('delUser') }}" method = "post">
+                    <div class = "delete-box">
+                        <input type = "username"
+                            class = "username ele"
+                            placeholder = "username"
+                            name = 'username'>
+                        <input type = "password"
+                            class = "password ele"
+                            placeholder = "password"
+                            name = 'password'>
+                        <button class = "clkbtn" type = 'submit'>Delete</button>
+                    </div>
+                </form>
+
+
+                <!-- Add user form -->
+                <form action = "{{url_for('addUser')}}" method = "post">
+                    <div class ="add-box">
+                        <input type = "username"
+                            class = "username ele"
+                            placeholder= "username"
+                            name = "username"
+                            >
+                        <input type = "password"
+                            class = "password ele"
+                            placeholder = "password"
+                            name="password">
+                        <input type = "password"
+                            class = "password ele"
+                            placeholder = "Confirm password">
+                        <button class = "clkbtn" type= 'submit'> Add</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    <script>
+        var delUser = document.querySelector(".delUser");
+        var addUser = document.querySelector(".addUser");
+        var slider = document.querySelector(".slider");
+        var formSection = document.querySelector(".form-section");
+        delUser.addEventListener("click", () => {
+            slider.classList.remove("moveslider");
+            formSection.classList.remove("form-section-move");
+        })
+        addUser.addEventListener("click", () => {
+            slider.classList.add("moveslider");
+            formSection.classList.add("form-section-move");
+        })
+        
+    </script>
+</body>
+</html>

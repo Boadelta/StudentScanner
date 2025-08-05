@@ -1,0 +1,5 @@
+Host: sql5.freesqldatabase.com
+Database name: sql5783302
+Database user: sql5783302
+Database password: uqwjJ7kF6y
+Port number: 3306
