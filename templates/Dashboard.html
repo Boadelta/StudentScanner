@@ -21,7 +21,7 @@
                 <a href="#student" id = "student">Delete Student</a>
                 <a href="{{url_for('logout')}}" id="logout">Log out</a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i> </a>
+    <i class="fa fa-bars" id = "myIcon"></i> </a>
             </div>
 
             <div class = "holder">
@@ -41,6 +41,11 @@
         } else { 
             x.className = "container";
         }
+         if (document.getElementById("myIcon").className=="fa fa-bars"){
+                document.getElementById("myIcon").className = "fa fa-times";
+         }else{
+                document.getElementById("myIcon").className = "fa fa-bars";
+         }
     }
 </script>
 </html>
