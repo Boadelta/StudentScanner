@@ -117,7 +117,7 @@ def delUser():
 
 @app.route("/delStudent", methods = ["POST"])
 def delStudent():
-    matnumber = request.form['matnumber']
+    matnumber = request.form['matnumber'].lower()
     stmt = delete(student).where(student.c.MatNumber==matnumber)
     db.session.execute(stmt)
     db.session.commit()
