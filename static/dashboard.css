@@ -17,6 +17,9 @@ body{
     flex-direction: row;
 
 }
+.container .icon {
+    display: none;
+}
 
 .container-box {
     display: flex;
@@ -505,13 +508,25 @@ div.content {
     }
 }
 
-@media screen and (max-width:300px) {
-    .container a {
-        text-align: center;
+
+@media screen and (max-width:600px) {
+    .container a:not(:first-child) {display: none;}
+    .container a.icon{
+        float: right;
+        display: block;
+    }
+    .container.responsive {position: relative;}
+    .container.responsive .icon {
+        position: absolute;
+        right: 0;
+        top:0;
+    }
+    .container.responsive a {
         float: none;
+        display: block;
+        text-allign: left;
     }
 }
-
 
 
 

@@ -240,5 +240,8 @@ button:hover {
     display: block;
     text-align: left;
   }
+  .myLink{
+      float:left;
+    }
 }
 
