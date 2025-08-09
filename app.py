@@ -180,7 +180,7 @@ def getData(id):
 
 @app.route('/sendQR', methods = ['post', 'get'])
 def sendQR():
-    matnumber = request.form['matnumber']
+    matnumber = request.form['matnumber'].lower()
     new = matnumber.replace('$', '.').replace('&', '/')
     stmt = select(student).where (student.c.MatNumber == matnumber)
     careless_student = db.session.execute(stmt).first()
