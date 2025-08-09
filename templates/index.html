@@ -14,14 +14,14 @@
 <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class = "topnav" id ="myTopnav">
-        <h3 class="Logo"> SVP</h3>
+        <h3 class="Logo" id="myLogo"> SVP</h3>
         <div class= "myLink">
             <a style="text-decoration:none" href="{{ url_for('index') }}">Home</a>
             <a style="text-decoration:none" href="{{ url_for('aboutPage') }}">About</a>
             <a style="text-decoration:none" href="{{ url_for('contactPage') }}">Contact</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars" id = "myIcon"> </i>
-            </a>
         </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars" id = "myIcon"> </i>
+            </a>
         
         
     </div>
@@ -47,6 +47,7 @@
     <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");
+            var y = document.getElementById("myLogo");
             if (x.className === "topnav") {
                 x.className += " responsive";
             } else {
@@ -54,8 +55,10 @@
             }
             if (document.getElementById("myIcon").className=="fa fa-bars"){
                 document.getElementById("myIcon").className = "fa fa-times";
+                y.style.display="none";
             }else{
                 document.getElementById("myIcon").className = "fa fa-bars";
+                y.style.display="inline-block";
         }
         }
     </script>
