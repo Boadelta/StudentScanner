@@ -43,21 +43,25 @@
 
 
                 <!-- Add user form -->
-                <form action = "{{url_for('addUser')}}" method = "post">
+                <form action = "{{url_for('addUser')}}" method = "post" id = "addUser">
                     <div class ="add-box">
                         <input type = "username"
                             class = "username ele"
                             placeholder= "username"
                             name = "username"
+                            id = 'username'
                             >
                         <input type = "password"
                             class = "password ele"
                             placeholder = "password"
-                            name="password">
+                            name="password"
+                            id = 'password'>
                         <input type = "password"
                             class = "password ele"
-                            placeholder = "Confirm password">
-                        <button class = "clkbtn" type= 'submit'> Add</button>
+                            placeholder = "Confirm password"
+                            id = 'confirmPassword'>
+                        <span id = 'passwordError' class = 'error'></span>
+                        <button class = "clkbtn" type= 'submit' id = "submitBtn"> Add</button>
                     </div>
                 </form>
                 
@@ -76,6 +80,38 @@
             slider.classList.add("moveslider");
             formSection.classList.add("form-section-move");
         })
+
+        document.getElementById("addUser").addEventListener('input', function() { 
+            validateForm();
+        });
+
+        function validateForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const submitBtn = document.getElementById('submitBtn');
+            const errorElement = document.getElementById('passwordError');
+
+            let isValid = true;
+            if (!username || !password || !confirmPassword){
+                isValid = false;
+            }
+
+            if (password !== confirmPassword) {
+                errorElement.textContent = 'passwords do not match';
+                isValid = false;
+            } else {
+                errorElement.textContent = "passwords match";
+            }
+            if (isValid) {
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.disabled = true;
+            }
+        }
+        
+                
+        
         
     </script>
 </body>
