@@ -81,7 +81,8 @@ def checkLogin():
     
     username = request.form['username']
     password = request.form['password']
-    admt = select(admin).where(admin.c.username==username, admin.c.password==password)
+    passHash = hashlib.sha256(password.encode()).hexdigest()
+    admt = select(admin).where(admin.c.username==username, admin.c.password==passHash)
     account = db.session.execute(admt).fetchone()
     if account:
         session['loggedin'] = True
@@ -96,7 +97,6 @@ def checkLogin():
 def addUser():
     username = request.form['username']
     password = request.form['password']
-    #password_hash = hashlib.sha256(password.encode()).hexdigest()
     stmt = insert(users).values(
     username=username,
     password=password)
