@@ -15,7 +15,7 @@
         <img src="{{got_student.StudImage}}" alt="Student Photo" class="student-photo"/>
       </div>
       <div class="details-section">
-        <h2 class="name"> {{got_student.SurName}} {{got_student.FirstName}} </h2>
+        <h2 class="name"> {{got_student.SurName.title()}} {{got_student.FirstName.title()}} </h2>
         <p><strong>Mat Number:</strong> {{got_student.MatNumber}} </p>
         <p><strong>Department:</strong> {{got_student.Department}} </p>
         <p><strong>Gender:</strong> {{got_student.Gender}} </p>
